@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 
-const GameScreen = ({ setScreen }) => {
+const GameScreen = ({ goToScreen }) => {
   return (
     <View style={styles.container}>
       <Text>We're playing a game!!!</Text>
-      <Button title="Main Menu" onPress={() => setScreen("mainMenu")} color="red" />
+      <Button title="Main Menu" onPress={() => goToScreen("mainMenu")} color="red" />
     </View>
   )
 }

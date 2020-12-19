@@ -1,11 +1,11 @@
- import React from 'react'
+import React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 
-const MainMenuScreen = ({ setScreen }) => {
+const MainMenuScreen = ({ goToScreen }) => {
   return (
     <View style={styles.container}>
       <Text>Main Menu</Text>
-      <Button title="Play Game" onPress={() => setScreen("game")}/>
+      <Button title="Play Game" onPress={() => goToScreen("game")}/>
     </View>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
+import useScreen from "../hooks/useScreen";
 
-const ScreenManager = ({ screenMap, defaultScreenKey }) => {
-  const [screen, setScreen] = useScreen(defaultScreenKey, screenMap);
+const ScreenManager = ({ screenMap, initialScreenKey }) => {
+  const [screen, setScreen] = useScreen(initialScreenKey, screenMap);
 
   return (
     <>
-      {React.cloneElement(screen, { setScreen: setScreen })}
+      {React.cloneElement(screen, { goToScreen: setScreen })}
     </>  
   )
 }
