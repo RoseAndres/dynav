@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, Button, View } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ScreenManager from "./src/components/ScreenManager";
+import Switcher from "./src/components/ScreenManager";
 import MainMenuScreen from "./src/screens/MainMenuScreen";
 import GameScreen from "./src/screens/GameScreen";
 
@@ -13,14 +13,14 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScreenManager screenMap={screens} defaultScreenKey={"mainMenu"} />
+      <Switcher screenMap={screens} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-  },
+    flex: 1
+  }
 });

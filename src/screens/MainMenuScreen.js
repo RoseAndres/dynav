@@ -1,22 +1,22 @@
-import React from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
 
-const MainMenuScreen = ({ goToScreen }) => {
+const MainMenuScreen = ({ switcher }) => {
   return (
     <View style={styles.container}>
       <Text>Main Menu</Text>
-      <Button title="Play Game" onPress={() => goToScreen("game")}/>
+      <Button title="Play Game" onPress={() => switcher.switchTo("game")} />
     </View>
-  )
-}
+  );
+};
 
-export default MainMenuScreen
+export default MainMenuScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-})
+    backgroundColor: "red",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-export default useScreen = (initalScreenName, screenMap) => {
-  const [screenName, setScreenName] = useState(() => initalScreenName);
-  const [screenComponent, setScreenComponent] = useState(() => screenMap[initalScreenName]);
+const useScreen = (initialScreenKey, screenMap) => {
+  const [screenKey, setScreenKey] = useState(
+    initialScreenKey ? initialScreenKey : Object.keys(screenMap)[0]
+  );
+
+  const [screenComponent, setScreenComponent] = useState(screenMap[screenKey]);
 
   useEffect(() => {
-    setScreenComponent(screenMap[screenName]);
-  }, [screenName, screenMap]);
+    setScreenComponent(screenMap[screenKey]);
+  }, [screenKey, screenMap]);
 
-  return [screenComponent, setScreenName]
-}
+  return [screenComponent, setScreenKey];
+};
+
+export default useScreen;
